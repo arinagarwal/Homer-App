@@ -1,0 +1,27 @@
+//
+//  cell.swift
+//  Homer
+//
+//  Created by Arin on 2/6/22.
+//
+
+import Foundation
+
+struct HomerCell {
+    
+    var Title: String
+    var Frequency: Int
+    var notify: Bool=false
+}
+
+extension HomerCell {
+    static var TestData = [
+        HomerCell(Title: "Clean Gutters", Frequency: 4, notify: true),
+        HomerCell(Title: "Flip Matresses", Frequency: 6),
+        HomerCell(Title: "Test Carbon Monoxide Detectors", Frequency: 2, notify:true),
+        HomerCell(Title: "Test Fire Alarms", Frequency: 1, notify: true),
+        HomerCell(Title: "Clean Dishwasher", Frequency: 6)
+    
+    ]
+    
+}
