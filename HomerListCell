@@ -1,0 +1,22 @@
+//
+//  HomerListCell.swift
+//  Homer
+//
+//  Created by Arin on 2/8/22.
+//
+
+import UIKit
+
+class HomerListCell: UITableViewCell {
+    typealias NotifyButtonAction = () -> Void
+    
+    @IBOutlet var titleLabel:UILabel!
+    @IBOutlet var frequencyLabel:UILabel!
+    @IBOutlet var notifyButton: UIButton!
+    
+    var notifyButtonAction: NotifyButtonAction?
+    
+    @IBAction func notifyButtonTriggered(_ sender: UIButton){
+        notifyButtonAction?()
+    }
+}
