@@ -1,0 +1,33 @@
+//
+//  ViewController.swift
+//  Homer
+//
+//  Created by Arin on 2/9/22.
+//
+
+import UIKit
+
+class cellNameViewController: UITableViewController {
+}
+    
+extension cellNameViewController {
+    
+    static let HomerListCellIdentifier = "CellName"
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return HomerCell.TestData.count
+    
+    }
+
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Self.HomerListCellIdentifier, for: indexPath) as? HomerListCell else {
+                fatalError("Unable to Dequeue Cell")
+        }
+        let homerCell = HomerCell.TestData[indexPath.row]
+        _ = homerCell.notify ? UIImage(systemName: "circle fill"): UIImage(systemName: "circle")
+        cell.titleLabel.text = homerCell.Title
+        cell.frequencyLabel.text = homerCell.Frequency.description
+        return cell
+    }
+}
+
